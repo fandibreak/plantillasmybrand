@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html x-data="data()" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <!-- Favicon -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="flex h-screen bg-blue-50 " :class="{ 'overflow-hidden': isSideMenuOpen }">
+
+        <!-- Desktop sidebar -->
+        <aside class="z-20 flex-shrink-0 hidden w-40 pl-7 overflow-y-auto bg-gray-800 md:block">
+            <div>
+                <div class="text-white">
+                    <div class="flex py-1  bg-gray-800">
+                        <div class="flex py-1 px-2 items-center">
+                            <p class="text-2xl px-4 text-blue-500 font-semibold">MBS</p <p
+                                class="ml-2 font-semibold italic">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex justify-leftt">
+                        <div class="">
+                            <img class="hidden h-24 w-24 rounded-full sm:block object-cover mr-2 border-4 border-blue-400"
+                                src="https://marcasderestauracion.es/wp-content/uploads/2015/03/panaria1.jpg"
+                                alt="">
+                            <p class="font-bold text-base  text-gray-400 pt-2 text-center w-24">Panaria</p>
+                        </div>
+                    </div>
+                    <div>
+                        <ul class="mt-6 ml-6 leading-10">
+                            <li class="relative px-2 py-1 ">
+                                <a class="inline-flex items-center w-full text-sm font-semibold text-white transition-colors duration-150 cursor-pointer hover:text-blue-500"
+                                    href="/dashboardtaild.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                                    </svg>
+                                    <span class="ml-10"></span>
+                                </a>
+                            </li>
+                            <li class="relative px-2 py-1 ">
+                                <a class="inline-flex items-center w-full text-sm font-semibold text-white transition-colors duration-150 cursor-pointer hover:text-blue-500"
+                                    href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                    <span class="ml-10"></span>
+                                </a>
+                            </li>
+                            <li class="relative px-2 py-1 ">
+                                <a class="inline-flex items-center w-full text-sm font-semibold text-white transition-colors duration-150 cursor-pointer hover:text-blue-500"
+                                    href="/lawyer.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                        </path>
+                                    </svg>
+                                    <span class="ml-10"></span>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Mobile sidebar -->
+        <!-- Backdrop -->
+        <div x-show="isSideMenuOpen" x-transition:enter="transition ease-in-out duration-150"
+            x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+            x-transition:leave="transition ease-in-out duration-150" x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            class="fixed inset-0 z-10 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center"></div>
+
+        <aside
+            class="fixed inset-y-0 z-20 flex-shrink-0 w-64 mt-16 overflow-y-auto  bg-gray-900 dark:bg-gray-800 md:hidden"
+            x-show="isSideMenuOpen" x-transition:enter="transition ease-in-out duration-150"
+            x-transition:enter-start="opacity-0 transform -translate-x-20" x-transition:enter-end="opacity-100"
+            x-transition:leave="transition ease-in-out duration-150" x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0 transform -translate-x-20" @click.away="closeSideMenu"
+            @keydown.escape="closeSideMenu">
+            <div>
+                <div class="text-white">
+                    <div class="flex p-2  bg-gray-800">
+                        <div class="flex py-3 px-2 items-center">
+                            <p class="text-2xl text-blue-500 font-semibold">SA</p <p class="ml-2 font-semibold italic">
+                            DASHBOARD</p>
+                        </div>
+                    </div>
+                    <div>
+                        <ul class="mt-6 leading-10">
+                            <li class="relative px-2 py-1 ">
+                                <a class="inline-flex items-center w-full text-sm font-semibold text-white transition-colors duration-150 cursor-pointer hover:text-blue-500"
+                                    href=" #">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                                    </svg>
+                                    <span class="ml-4">DASHBOARD</span>
+                                </a>
+                            </li>
+                            <li class="relative px-2 py-1" x-data="{ Open : false  }">
+                                <div class="inline-flex items-center justify-between w-full text-base font-semibold transition-colors duration-150 text-gray-500  hover:text-yellow-400 cursor-pointer"
+                                    x-on:click="Open = !Open">
+                                    <span
+                                        class="inline-flex items-center  text-sm font-semibold text-white hover:text-blue-400">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8m-5 5h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293h3.172a1 1 0 00.707-.293l2.414-2.414a1 1 0 01.707-.293H20" />
+                                        </svg>
+                                        <span class="ml-4">ITEM</span>
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" x-show="!Open"
+                                        class="ml-1  text-white w-4 h-4" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor" style="display: none;">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 19l-7-7 7-7" />
+                                    </svg>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" x-show="Open"
+                                        class="ml-1  text-white w-4 h-4" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor" style="display: none;">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </div>
+
+                                <div x-show.transition="Open" style="display:none;">
+                                    <ul x-transition:enter="transition-all ease-in-out duration-300"
+                                        x-transition:enter-start="opacity-25 max-h-0"
+                                        x-transition:enter-end="opacity-100 max-h-xl"
+                                        x-transition:leave="transition-all ease-in-out duration-300"
+                                        x-transition:leave-start="opacity-100 max-h-xl"
+                                        x-transition:leave-end="opacity-0 max-h-0"
+                                        class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium  rounded-md shadow-inner  bg-blue-400"
+                                        aria-label="submenu">
+
+                                        <li class="px-2 py-1 text-white transition-colors duration-150">
+                                            <div class="px-1 hover:text-gray-800 hover:bg-gray-100 rounded-md">
+                                                <div class="flex items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                                                    </svg>
+                                                    <a href="#"
+                                                        class="w-full ml-2  text-sm font-semibold text-white hover:text-gray-800">Item
+                                                        1</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="flex flex-col flex-1 w-full overflow-y-auto">
+            <header class="z-40 py-4 bg-Blue-500">
+                <div class="flex items-center justify-between h-8 px-6 mx-auto">
+                    <!-- Mobile hamburger -->
+                    <button class="p-1 mr-5 -ml-1 rounded-md md:hidden focus:outline-none focus:shadow-outline-purple"
+                        @click="toggleSideMenu" aria-label="Menu">
+                        <x-heroicon-o-menu class="w-6 h-6 text-white" />
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h7" />
+                        </svg>
+                    </button>
+
+                    <!-- Search Input -->
+                    <div class="flex justify-center  mt-2 mr-4">
+                        <div class="relative flex w-full flex-wrap items-stretch mb-3">
+
+                            <input type="search" placeholder="Buscar" {{ $attributes }}
+                                class="form-input px-20 py-2 placeholder-gray-400 text-gray-700 relative bg-white rounded-lg text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pr-25" />
+                            <span
+                                class="z-10 h-full leading-snug font-normal  text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-3 py-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 -mt-1" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                </svg>
+
+                            </span>
+
+                        </div>
+                        <button
+                            class="bg-blue-400 hover:bg-blue-500 text-white font-bold  px-10 ml-8 mb-2 border border-blue-700 rounded-lg">
+                            Buscar
+                        </button>
+                    </div>
+
+                    <ul class="flex items-center flex-shrink-0 space-x-6">
+
+                        <!-- Notifications menu -->
+                        <li class="relative">
+                            <button
+                                class="p-2 bg-white text-blue-400 align-middle rounded-full hover:text-white hover:bg-blue-400 focus:outline-none "
+                                @click="toggleNotificationsMenu" @keydown.escape="closeNotificationsMenu"
+                                aria-label="Notifications" aria-haspopup="true">
+                                <div class="flex items-cemter">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                                    </svg>
+                                </div>
+                                <!-- Notification badge -->
+                                <span aria-hidden="true"
+                                    class="absolute top-0 right-0 inline-block w-3 h-3 transform translate-x-1 -translate-y-1 bg-red-600 border-2 border-white rounded-full dark:border-gray-800"></span>
+                            </button>
+                            <template x-if="isNotificationsMenuOpen">
+                                <ul x-transition:leave="transition ease-in duration-150"
+                                    x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+                                    @click.away="closeNotificationsMenu" @keydown.escape="closeNotificationsMenu"
+                                    class="absolute right-0 w-56 p-2 mt-2 space-y-2 text-gray-600 bg-blue-400 border border-blue-500 rounded-md shadow-md">
+                                    <li class="flex">
+                                        <a class="text-white inline-flex items-center justify-between w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800"
+                                            href="#">
+                                            <span>Messages</span>
+                                            <span
+                                                class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-600 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-600">
+                                                13
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </template>
+                        </li>
+
+                        <!-- Profile menu -->
+                        <li class="relative">
+
+                            <template x-if="isProfileMenuOpen">
+                                <ul x-transition:leave="transition ease-in duration-150"
+                                    x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+                                    @click.away="closeProfileMenu" @keydown.escape="closeProfileMenu"
+                                    class="absolute right-0 w-56 p-2 mt-2 space-y-2 text-gray-600 bg-blue-400 border border-blue-500 rounded-md shadow-md"
+                                    aria-label="submenu">
+                                    <li class="flex">
+                                        <a class=" text-white inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800"
+                                            href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                            <span>Profile</span>
+                                        </a>
+                                    </li>
+                                    <li class="flex">
+                                        <a class="text-white inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800"
+                                            href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                            </svg>
+                                            <span>Log out</span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </template>
+                        </li>
+                    </ul>
+
+                </div>
+            </header>
+            <main class="">
+                <div class="grid mb-4 pb-10 px-8 mx-4 rounded-3xl bg-Sky-50 border-4 border-blue-400">
+
+                    <div class="grid grid-cols-12 gap-6">
+                        <div class="grid grid-cols-12 col-span-12 gap-6 xxl:col-span-9">
+                            <div class="col-span-12 mt-8">
+                                <div class="flex items-center h-10 intro-y">
+                                    <h2 class="mr-5 text-lg font-medium truncate">Dashboard</h2>
+                                </div>
+                                <div class="grid grid-cols-12 gap-6 mt-5">
+                                    <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-white"
+                                        href="#">
+                                        <div class="p-5">
+                                            <div class="flex justify-between">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-black-400"
+                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                                </svg>
+                                                <div
+                                                    class="bg-green-500 rounded-full h-6 px-2 flex justify-items-center text-white font-semibold text-sm">
+                                                    <span class="flex items-center">20%</span>
+                                                </div>
+                                            </div>
+                                            <div class="ml-2 w-full flex-1">
+                                                <div>
+                                                    <div class="mt-3 text-3xl font-bold leading-8">36</div>
+
+                                                    <div class="mt-1 text-base text-gray-600">Coincidencias Dominios</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-white"
+                                        href="#">
+                                        <div class="p-5">
+                                            <div class="flex justify-between">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-yellow-400"
+                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                                </svg>
+                                                <div
+                                                    class="bg-red-500 rounded-full h-6 px-2 flex justify-items-center text-white font-semibold text-sm">
+                                                    <span class="flex items-center">12%</span>
+                                                </div>
+                                            </div>
+                                            <div class="ml-2 w-full flex-1">
+                                                <div>
+                                                    <div class="mt-3 text-3xl font-bold leading-8">15</div>
+
+                                                    <div class="mt-1 text-base text-gray-600">Coincidencias Nombres
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-white"
+                                        href="#">
+                                        <div class="p-5">
+                                            <div class="flex justify-between">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-pink-600"
+                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+                                                </svg>
+                                                <div
+                                                    class="bg-yellow-500 rounded-full h-6 px-2 flex justify-items-center text-white font-semibold text-sm">
+                                                    <span class="flex items-center">21%</span>
+                                                </div>
+                                            </div>
+                                            <div class="ml-2 w-full flex-1">
+                                                <div>
+                                                    <div class="mt-3 text-3xl font-bold leading-8">25</div>
+
+                                                    <div class="mt-1 text-base text-gray-600">Coincidencias Logotipos
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-white"
+                                        href="#">
+                                        <div class="p-5">
+                                            <div class="flex justify-between">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-green-400"
+                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                                                </svg>
+                                                <div
+                                                    class="bg-black-50 rounded-full h-6 px-2 flex justify-items-center text-white font-semibold text-sm">
+                                                    <span class="flex items-center">16%</span>
+                                                </div>
+                                            </div>
+                                            <div class="ml-2 w-full flex-1">
+                                                <div>
+                                                    <div class="mt-3 text-3xl font-bold leading-8">12</div>
+
+                                                    <div class="mt-1 text-base text-gray-600">Coincidencias  RDS
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-span-12 mt-5">
+                                <div class="grid gap-2 grid-cols-1 lg:grid-cols-2 ">
+
+                                    <div class="bg-white shadow-lg p-4" id="chartline"></div>
+                                    <div class="bg-white shadow-lg" id="chartpie"></div>
+
+
+                                    <!-- TABLA NOMBRE  -->
+
+                                    <table class="px-6 mt-10 ">
+                                        <thead>
+                                            <tr class="bg-blue-400  ">
+                                                <th class="px-5 py-2 rounded-l-lg">
+                                                    <span class="text-gray-100 ">Nombre</span>
+                                                </th>
+                                                <th class="px-5 py-2">
+                                                    <span class="text-gray-100">Incidencias a validar</span>
+                                                </th>
+                                                <th class="px-10 py-2 rounded-r-lg">
+                                                    <span class="text-gray-100">Coincidencias</span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="bg-transparent ">
+                                                <td> </td>
+                                                <td class="py-1 text-center ">
+                                                <td class="px-16 py-2">
+                                                </td>
+                                                </td>
+                                            </tr>
+                                            <tr class="bg-white">
+                                                <td class="rounded-l-lg">
+                                                    <span class="text-center ml-5 font-semibold">Panaria</span>
+                                                </td>
+                                                <td class="py-1 text-center ">
+                                                    <span class="font-semibold">95</span>
+                                                </td>
+                                                <td class="px-16 py-2 rounded-r-lg">
+                                                    <div class="overflow-hidden h-4 text-xs flex rounded bg-red-300">
+                                                        <div style="width: 34%"
+                                                            class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+
+                                    <!-- TABLA DOMINIO  -->
+
+                                    <table class="px-6 mt-10">
+                                        <thead class="border-red">
+                                            <tr class="bg-blue-400  ">
+                                                <th class="px-5 py-2 rounded-l-lg">
+                                                    <span class="text-gray-100 ">Dominio</span>
+                                                </th>
+                                                <th class="px-5 py-2">
+                                                    <span class="text-gray-100">Incidencias a validar</span>
+                                                </th>
+                                                <th class="px-10 py-2 rounded-r-lg">
+                                                    <span class="text-gray-100">Coincidencias</span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="bg-transparent ">
+                                                <td> </td>
+                                                <td class="py-1 text-center ">
+                                                <td class="px-16 py-2">
+                                                </td>
+                                                </td>
+                                            </tr>
+                                            <tr class="bg-white">
+                                                <td class="rounded-l-lg">
+                                                    <span class="text-center ml-5 font-semibold">Panaria.es</span>
+                                                </td>
+                                                <td class="py-1 text-center ">
+                                                    <span class="font-semibold">8</span>
+                                                </td>
+                                                <td class="px-16 py-2 rounded-r-lg">
+                                                    <div class="overflow-hidden h-4 text-xs flex rounded bg-green-300">
+                                                        <div style="width: 12%"
+                                                            class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="bg-white">
+                                                <td class="rounded-l-lg">
+                                                    <span class="text-center ml-5 font-semibold">Panaria.com</span>
+                                                </td>
+                                                <td class="py-1 text-center ">
+                                                    <span class="font-semibold">26</span>
+                                                </td>
+                                                <td class="px-16 py-2 rounded-r-lg">
+                                                    <div class="overflow-hidden h-4 text-xs flex rounded bg-green-300">
+                                                        <div style="width:28%"
+                                                            class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+
+
+                                    <!-- TABLA LOGOTIPO  -->
+
+                                    <table class="px-6 mt-10">
+                                        <thead class="border-red">
+                                            <tr class="bg-blue-400  ">
+                                                <th class="px-5 py-2 rounded-l-lg">
+                                                    <span class="text-gray-100 ">Logotipo</span>
+                                                </th>
+                                                <th class="px-5 py-2">
+                                                    <span class="text-gray-100">Incidencias a validar</span>
+                                                </th>
+                                                <th class="px-10 py-2 rounded-r-lg">
+                                                    <span class="text-gray-100">Coincidencias</span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="bg-transparent ">
+                                                <td> </td>
+                                                <td class="py-1 text-center ">
+                                                <td class="px-16 py-2">
+                                                </td>
+                                                </td>
+                                            </tr>
+                                            <tr class="bg-white">
+                                                <td class="px-5  rounded-l-lg">
+                                                    <img class="h-7 w-7 rounded-full object-cover "
+                                                        src="https://marcasderestauracion.es/wp-content/uploads/2015/03/panaria1.jpg"
+                                                        alt="" />
+                                                </td>
+                                                <td class="py-1 text-center ">
+                                                    <span class="font-semibold">63</span>
+                                                </td>
+                                                <td class="px-16 py-2 rounded-r-lg">
+                                                    <div class="overflow-hidden h-4 text-xs flex rounded bg-red-300">
+                                                        <div style="width: 42%"
+                                                            class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                </td>
+                                            </tr>
+                                            
+
+                                        </tbody>
+                                    </table>
+
+                                    <!-- TABLA RED SOCIAL  -->
+
+
+                                    <table class="px-6 mt-10">
+                                        <thead class="border-red">
+                                            <tr class="bg-blue-400  ">
+                                                <th class="px-5 py-2 rounded-l-lg">
+                                                    <span class="text-gray-100 ">Redes</span>
+                                                </th>
+                                                <th class="px-5 py-2">
+                                                    <span class="text-gray-100">Incidencias a validar</span>
+                                                </th>
+                                                <th class="px-10 py-2 rounded-r-lg">
+                                                    <span class="text-gray-100">Coincidencias</span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="bg-transparent ">
+                                                <td> </td>
+                                                <td class="py-1 text-center ">
+                                                <td class="px-16 py-2">
+                                                </td>
+                                                </td>
+                                            </tr>
+                                            <tr class="bg-white">
+                                                <td class="px-5  rounded-l-lg">
+                                                    <img class="h-7 w-7 rounded-full object-cover "
+                                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1024px-Facebook_Logo_%282019%29.png"
+                                                        alt="" />
+                                                </td>
+                                                <td class="py-1 text-center ">
+                                                    <span class="font-semibold">4</span>
+                                                </td>
+                                                <td class="px-16 py-2 rounded-r-lg">
+                                                    <div class="overflow-hidden h-4 text-xs flex rounded bg-green-300">
+                                                        <div style="width:7%"
+                                                            class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                </td>
+                                            </tr>
+                                            <tr class="bg-white">
+                                                <td class="px-5  rounded-l-lg">
+                                                    <img class="h-7 w-7 rounded-full object-cover "
+                                                        src="data:image/jpeg;base64,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"
+                                                        alt="" />
+                                                </td>
+                                                <td class="py-1 text-center ">
+                                                    <span class="font-semibold">2</span>
+                                                </td>
+                                                <td class="px-16 py-2 rounded-r-lg">
+                                                    <div class="overflow-hidden h-4 text-xs flex rounded bg-green-300">
+                                                        <div style="width:5%"
+                                                            class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                </td>
+                                            </tr>
+                                            <tr class="bg-white">
+                                                <td class="px-5  rounded-l-lg">
+                                                    <img class="h-7 w-7 rounded-full object-cover "
+                                                        src="http://assets.stickpng.com/images/5cb78671a7c7755bf004c14b.png"
+                                                        alt="" />
+                                                </td>
+                                                <td class="py-1 text-center ">
+                                                    <span class="font-semibold">5</span>
+                                                </td>
+                                                <td class="px-16 py-2 rounded-r-lg">
+                                                    <div class="overflow-hidden h-4 text-xs flex rounded bg-green-300">
+                                                        <div style="width:8%"
+                                                            class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                </td>
+                                            </tr>
+                                            <tr class="bg-white">
+                                                <td class="px-5  rounded-l-lg">
+                                                    <img class="h-7 w-7 rounded-full object-cover "
+                                                        src="data:image/jpeg;base64,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"
+                                                        alt="" />
+                                                </td>
+                                                <td class="py-1 text-center ">
+                                                    <span class="font-semibold">7</span>
+                                                </td>
+                                                <td class="px-16 py-2 rounded-r-lg">
+                                                    <div class="overflow-hidden h-4 text-xs flex rounded bg-green-300">
+                                                        <div style="width:15%"
+                                                            class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <!-- TABLA DOMINIO CORREO  -->
+
+                                    <table class="px-6 mt-10">
+                                        <thead class="border-red">
+                                            <tr class="bg-blue-400  ">
+                                                <th class="px-5 py-2 rounded-l-lg">
+                                                    <span class="text-gray-100 ">Correo</span>
+                                                </th>
+                                                <th class="px-5 py-2">
+                                                    <span class="text-gray-100">Incidencias a validar</span>
+                                                </th>
+                                                <th class="px-10 py-2 rounded-r-lg">
+                                                    <span class="text-gray-100">Coincidencias</span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="bg-transparent ">
+                                                <td> </td>
+                                                <td class="py-1 text-center ">
+                                                <td class="px-16 py-2">
+                                                </td>
+                                                </td>
+                                            </tr>
+                                            <tr class="bg-white">
+                                                <td class="rounded-l-lg">
+                                                    <span class="text-center ml-5 font-semibold">Panaria@gmail.com</span>
+                                                </td>
+                                                <td class="py-1 text-center ">
+                                                    <span class="font-semibold">6</span>
+                                                </td>
+                                                <td class="px-16 py-2 rounded-r-lg">
+                                                    <div class="overflow-hidden h-4 text-xs flex rounded bg-green-300">
+                                                        <div style="width: 10%"
+                                                            class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                </td>
+                                            </tr>
+                                            <tr class="bg-white">
+                                                <td class="rounded-l-lg">
+                                                    <span class="text-center ml-5 font-semibold">Panaria@hotmail.com</span>
+                                                </td>
+                                                <td class="py-1 text-center ">
+                                                    <span class="font-semibold">8</span>
+                                                </td>
+                                                <td class="px-16 py-2 rounded-r-lg">
+                                                    <div class="overflow-hidden h-4 text-xs flex rounded bg-green-300">
+                                                        <div style="width: 7%"
+                                                            class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- TABLES INFO  -->
+
+
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script>
+        function data() {
+
+            return {
+
+                isSideMenuOpen: false,
+                toggleSideMenu() {
+                    this.isSideMenuOpen = !this.isSideMenuOpen
+                },
+                closeSideMenu() {
+                    this.isSideMenuOpen = false
+                },
+                isNotificationsMenuOpen: false,
+                toggleNotificationsMenu() {
+                    this.isNotificationsMenuOpen = !this.isNotificationsMenuOpen
+                },
+                closeNotificationsMenu() {
+                    this.isNotificationsMenuOpen = false
+                },
+                isProfileMenuOpen: false,
+                toggleProfileMenu() {
+                    this.isProfileMenuOpen = !this.isProfileMenuOpen
+                },
+                closeProfileMenu() {
+                    this.isProfileMenuOpen = false
+                },
+                isPagesMenuOpen: false,
+                togglePagesMenu() {
+                    this.isPagesMenuOpen = !this.isPagesMenuOpen
+                },
+
+            }
+        }
+    </script>
+    <script>
+        var chart = document.querySelector('#chartline')
+        var options = {
+            series: [{
+                name: 'Usurpaciones',
+                type: 'area',
+                data: [24, 45, 11, 27, 21, 13, 16, 11, 11, 17, 13],
+
+            }, {
+                name: 'Perdidas economicas',
+                type: 'line',
+                data: [15, 25, 15, 41, 23, 14, 17, 2, 11, 18, 11]
+
+            }],
+            chart: {
+                height: 350,
+                type: 'line',
+                zoom: {
+                    enabled: true
+                }
+            },
+            stroke: {
+                curve: 'smooth'
+            },
+            fill: {
+                type: 'solid',
+                opacity: [0.35, 1],
+            },
+            labels: ['Enero 01', 'Enero 02', 'Enero 03', 'Enero 04', 'Enero 05', 'Enero 06', 'Enero 07', 'Enero 08', 'Enero 09 ',
+                'Enero 10', 'Enero 11'
+            ],
+            markers: {
+                size: 0
+            },
+            yaxis: [{
+                title: {
+                    text: 'Series A',
+                },
+            },
+            {
+                opposite: true,
+                title: {
+                    text: 'Series B',
+
+                },
+            },
+            ],
+            tooltip: {
+                shared: true,
+                intersect: false,
+                y: {
+                    formatter: function (y) {
+                        if (typeof y !== "undefined") {
+                            return y.toFixed(0) + " points";
+                        }
+                        return y;
+                    }
+                }
+            }
+        };
+        var chart = new ApexCharts(chart, options);
+        chart.render();
+    </script>
+    <script>
+        var chart = document.querySelector('#chartpie')
+        var options = {
+            series: [56, 15, 9, 18],
+            chart: {
+                height: 350,
+                type: 'radialBar',
+            },
+            plotOptions: {
+                radialBar: {
+                    dataLabels: {
+                        name: {
+                            fontSize: '22px'
+
+                        },
+                        value: {
+                            fontSize: '16px',
+                        },
+                        total: {
+                            show: true,
+                            label: 'Total',
+                            formatter: function (w) {
+                                // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
+                                return 674
+                            }
+                        }
+                    }
+                }
+            },
+            labels: ['Coincidencias Logotipo', 'Coincidencias Nombre', 'Coincidencias Dominios', 'Coincidencias Redes'],
+        };
+
+        var chart = new ApexCharts(chart, options);
+        chart.render();
+
+
+
+        function myFunction() {
+            alert('Enseguida te llamaremos');
+        }
+    </script>
+</body>
+
+</html>
+</body>
+
+</html>

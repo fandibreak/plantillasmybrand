@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html x-data="data()" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <!-- Favicon -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="flex h-screen bg-blue-50 " :class="{ 'overflow-hidden': isSideMenuOpen }">
+
+        <!-- Desktop sidebar -->
+        <aside class="z-20 flex-shrink-0 hidden w-40 pl-7 overflow-y-auto bg-gray-800 md:block">
+            <div>
+                <div class="text-white">
+                    <div class="flex py-1  bg-gray-800">
+                        <div class="flex py-1 px-2 items-center">
+                            <p class="text-2xl px-4 text-blue-500 font-semibold">MBS</p <p class="ml-2 font-semibold italic">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex justify-leftt">
+                        <div class="">
+                            <img class="hidden h-24 w-24 rounded-full sm:block object-cover mr-2 border-4 border-blue-400"
+                                src="https://thumbs.dreamstime.com/b/leroy-merlin-logo-editorial-ilustrativo-sobre-fondo-blanco-icono-vectorial-logotipos-iconos-conjunto-redes-sociales-banner-plano-210443090.jpg" alt="">
+                            <p class="font-bold text-base  text-gray-400 pt-2 text-center w-24">Leroy merlin</p>
+                        </div>
+                    </div>
+                    <div>
+                        <ul class="mt-6 ml-6 leading-10">
+                            <li class="relative px-2 py-1 ">
+                                <a class="inline-flex items-center w-full text-sm font-semibold text-white transition-colors duration-150 cursor-pointer hover:text-blue-500"
+                                    href="/dashboardtaild.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                                    </svg>
+                                    <span class="ml-10"></span>
+                                </a>
+                            </li>
+                            <li class="relative px-2 py-1 ">
+                                <a class="inline-flex items-center w-full text-sm font-semibold text-white transition-colors duration-150 cursor-pointer hover:text-blue-500"
+                                    href=" #">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                    <span class="ml-10"></span>
+                                </a>
+                            </li>
+                            <li class="relative px-2 py-1 ">
+                                <a class="inline-flex items-center w-full text-sm font-semibold text-white transition-colors duration-150 cursor-pointer hover:text-blue-500"
+                                    href=" #">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                    <span class="ml-10"></span>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Mobile sidebar -->
+        <!-- Backdrop -->
+        <div x-show="isSideMenuOpen" x-transition:enter="transition ease-in-out duration-150"
+            x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+            x-transition:leave="transition ease-in-out duration-150" x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            class="fixed inset-0 z-10 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center"></div>
+
+
+
+        <div class="flex flex-col flex-1 w-full overflow-y-auto">
+
+            <main class="">
+                <div class="grid mb-4 pb-10 px-8 mx-4 rounded-3xl bg-Sky-50 border-4 border-blue-400">
+                    <div class="col-span-12 mt-5">
+                        <div class="grid gap-2 grid-cols-1 lg:grid-cols-1">
+                            <div class="bg-white p-4 shadow-lg rounded-lg">
+                                <h1 class="font-bold text-base"></h1>
+                                <div class="w-full bg-gray-800  rounded-lg">
+                                    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12" >
+                                        <div class="text-center pb-12">
+                                            <h2 class="text-base font-bold text-indigo-400  lg:text-3xl ">
+                                                Ponemos a tu disposición los mejores abogados
+                                            </h2>
+                                            <h1
+                                                class="font-bold text-3xl md:text-3xl lg:text-3xl font-heading text-white">
+                                                Elije el perfil que mas te guste
+                                            </h1>
+                                        </div>
+                                        <div
+                                            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-4">
+                                            <div
+                                                class="w-full bg-gray-900 rounded-lg sahdow-lg p-12 flex flex-col justify-center items-center">
+                                                <div class="mb-8">
+                                                    <img class="object-center object-cover rounded-full h-36 w-36"
+                                                        src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
+                                                        alt="photo">
+                                                </div>
+                                                <div class="text-center">
+                                                    <p class="text-xl text-white font-bold mb-2">Juanjo Casco</p>
+                                                    <a class="text-white" >&#9733 &#9733 &#9733 </a>
+                                                    <p class="text-base text-gray-400 font-normal mb-4">Especialista : Dominios</p>
+                                                        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-10 border border-blue-500 hover:border-transparent rounded" onClick="myFunction()">
+                                                            Contactar
+                                                          </button>  
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="w-full bg-gray-900 rounded-lg sahdow-lg p-12 flex flex-col justify-center items-center">
+                                                <div class="mb-8">
+                                                    <img class="object-center object-cover rounded-full h-36 w-36"
+                                                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
+                                                        alt="photo">
+                                                </div>
+                                                <div class="text-center">
+                                                    <p class="text-xl text-white font-bold mb-2">Taniu Ojeda</p>
+                                                    <a class="text-white" >&#9733 &#9733 &#9733 &#9733 &#9733  </a>
+                                                    <p class="text-base text-gray-400 font-normal mb-4">Especialista : Emails</p>
+                                                        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-10 border border-blue-500 hover:border-transparent rounded" onClick="myFunction()">
+                                                            Contactar
+                                                          </button>  
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="w-full bg-gray-900 rounded-lg sahdow-lg p-12 flex flex-col justify-center items-center">
+                                                <div class="mb-8">
+                                                    <img class="object-center object-cover rounded-full h-36 w-36"
+                                                        src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1176&q=80"
+                                                        alt="photo">
+                                                </div>
+                                                <div class="text-center">
+                                                    <p class="text-xl text-white font-bold mb-2">Isabela Guapo
+                                                    </p>                <a class="text-white" >&#9733 &#9733 &#9733 &#9733  </a>
+                                                    <p class="text-base text-gray-400 font-normal  mb-4">Especialista : Derecho de imagenes</p>
+                                     
+                                                        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-10 border border-blue-500 hover:border-transparent rounded" onClick="myFunction()">
+                                                            Contactar
+                                                          </button>  
+                                                </div>
+                                            </div>
+                    
+                                        </div>
+                                        <div
+                                        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                        <div
+                                            class="w-full bg-gray-900 rounded-lg sahdow-lg p-12 flex flex-col justify-center items-center">
+                                            <div class="mb-8">
+                                                <img class="object-center object-cover rounded-full h-36 w-36"
+                                                    src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1171&q=80"
+                                                    alt="photo">
+                                            </div>
+                                            <div class="text-center">
+                                                <p class="text-xl text-white font-bold mb-2">Alicia Carrinton</p>
+                                                <a class="text-white" >&#9733 &#9733 &#9733 </a>
+                                                <p class="text-base text-gray-400 font-normal mb-4">Especialista : Dominios</p>
+                                                    <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-10 border border-blue-500 hover:border-transparent rounded" onClick="myFunction()">
+                                                        Contactar
+                                                      </button>  
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="w-full bg-gray-900 rounded-lg sahdow-lg p-12 flex flex-col justify-center items-center">
+                                            <div class="mb-8">
+                                                <img class="object-center object-cover rounded-full h-36 w-36"
+                                                    src="https://images.unsplash.com/photo-1500048993953-d23a436266cf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1169&q=80"
+                                                    alt="photo">
+                                            </div>
+                                            <div class="text-center">
+                                                <p class="text-xl text-white font-bold mb-2">Ruben Lage</p>
+                                                <a class="text-white" >&#9733 &#9733 &#9733 &#9733 &#9733  </a>
+                                                <p class="text-base text-gray-400 font-normal mb-4">Especialista : Emails</p>
+                                                    <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-10 border border-blue-500 hover:border-transparent rounded" onClick="myFunction()">
+                                                        Contactar
+                                                      </button>  
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="w-full bg-gray-900 rounded-lg sahdow-lg p-12 flex flex-col justify-center items-center">
+                                            <div class="mb-8">
+                                                <img class="object-center object-cover rounded-full h-36 w-36"
+                                                    src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=686&q=80"
+                                                    alt="photo">
+                                            </div>
+                                            <div class="text-center">
+                                                <p class="text-xl text-white font-bold mb-2">Michaela
+                                                </p>                <a class="text-white" >&#9733 &#9733 &#9733 &#9733  </a>
+                                                <p class="text-base text-gray-400 font-normal  mb-4">Especialista : Derecho de imagenes</p>
+                                 
+                                                    <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-10 border border-blue-500 hover:border-transparent rounded" onClick="myFunction()">
+                                                        Contactar
+                                                      </button>  
+                                            </div>
+                                        </div>
+                
+                                    </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               <!-- FIN DIV  ABOGADOS  -->
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script>
+        function data() {
+
+            return {
+
+                isSideMenuOpen: false,
+                toggleSideMenu() {
+                    this.isSideMenuOpen = !this.isSideMenuOpen
+                },
+                closeSideMenu() {
+                    this.isSideMenuOpen = false
+                },
+                isNotificationsMenuOpen: false,
+                toggleNotificationsMenu() {
+                    this.isNotificationsMenuOpen = !this.isNotificationsMenuOpen
+                },
+                closeNotificationsMenu() {
+                    this.isNotificationsMenuOpen = false
+                },
+                isProfileMenuOpen: false,
+                toggleProfileMenu() {
+                    this.isProfileMenuOpen = !this.isProfileMenuOpen
+                },
+                closeProfileMenu() {
+                    this.isProfileMenuOpen = false
+                },
+                isPagesMenuOpen: false,
+                togglePagesMenu() {
+                    this.isPagesMenuOpen = !this.isPagesMenuOpen
+                },
+
+            }
+        }
+    </script>
+    <script>
+        var chart = document.querySelector('#chartline')
+        var options = {
+            series: [{
+                name: 'Usurpaciones',
+                type: 'area',
+                data: [44, 55, 31, 47, 31, 43, 26, 41, 31, 47, 33],
+                
+            }, {
+                name: 'Perdidas economicas',
+                type: 'line',
+                data: [25, 35, 25, 51, 33, 24, 27, 12, 21, 38, 21]
+                
+            }],
+            chart: {
+                height: 350,
+                type: 'line',
+                zoom: {
+                    enabled: true
+                }
+            },
+            stroke: {
+                curve: 'smooth'
+            },
+            fill: {
+                type: 'solid',
+                opacity: [0.35, 1],
+            },
+            labels: ['Enero 01', 'Enero 02', 'Enero 03', 'Enero 04', 'Enero 05', 'Enero 06', 'Enero 07', 'Enero 08', 'Enero 09 ',
+                'Enero 10', 'Enero 11'
+            ],
+            markers: {
+                size: 0
+            },
+            yaxis: [{
+                title: {
+                    text: 'Series A',
+                },
+            },
+            {
+                opposite: true,
+                title: {
+                    text: 'Series B',
+                    
+                },
+            },
+            ],
+            tooltip: {
+                shared: true,
+                intersect: false,
+                y: {
+                    formatter: function (y) {
+                        if (typeof y !== "undefined") {
+                            return y.toFixed(0) + " points";
+                        }
+                        return y;
+                    }
+                }
+            }
+        };
+        var chart = new ApexCharts(chart, options);
+        chart.render();
+    </script>
+    <script>
+        var chart = document.querySelector('#chartpie')
+        var options = {
+            series: [56, 15, 9, 18],
+            chart: {
+                height: 350,
+                type: 'radialBar',
+            },
+            plotOptions: {
+                radialBar: {
+                    dataLabels: {
+                        name: {
+                            fontSize: '22px'
+                            
+                        },
+                        value: {
+                            fontSize: '16px',
+                        },
+                        total: {
+                            show: true,
+                            label: 'Total',
+                            formatter: function (w) {
+                                // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
+                                return 674
+                            }
+                        }
+                    }
+                }
+            },
+            labels: ['Logotipo', 'Coincidencias nombre', 'Coincidencias logotipos', 'Coincidencias redes'],
+        };
+
+        var chart = new ApexCharts(chart, options);
+        chart.render();
+
+
+
+        function myFunction() {
+        alert('Enseguida te llamaremos');
+            }
+    </script>
+</body>
+
+</html>
+</body>
+
+</html>
