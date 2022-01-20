@@ -10,7 +10,7 @@
     <!-- Favicon -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -354,8 +354,10 @@
 
 
 
-        function myFunction() {
-        alert('Enseguida te llamaremos');
+   function myFunction() {
+            swal('Tu solicitud ha sido enviada',
+            'Nuestro Abogado contactará contigo lo antes posible',
+            'success');
             }
     </script>
 </body>

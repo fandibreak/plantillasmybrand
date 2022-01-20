@@ -9,11 +9,14 @@
         rel="stylesheet" />
     <!-- Favicon -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+
 
 </head>
 
 <body>
+    
     <div class="flex h-screen bg-blue-50 " :class="{ 'overflow-hidden': isSideMenuOpen }">
 
         <!-- Desktop sidebar -->
@@ -202,9 +205,9 @@
                                                 </p>                <a class="text-white" >&#9733 &#9733 &#9733 &#9733  </a>
                                                 <p class="text-base text-gray-400 font-normal  mb-4">Especialista : Derecho de imagenes</p>
                                  
-                                                    <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-10 border border-blue-500 hover:border-transparent rounded" onClick="myFunction()">
-                                                        Contactar
-                                                      </button>  
+                                                <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-10 border border-blue-500 hover:border-transparent rounded" onClick="myFunction()">
+                                                    Contactar
+                                                  </button>  
                                             </div>
                                         </div>
                 
@@ -353,10 +356,13 @@
         chart.render();
 
 
-
         function myFunction() {
-        alert('Enseguida te llamaremos');
+            swal('Tu solicitud ha sido enviada',
+            'Nuestro Abogado contactará contigo lo antes posible',
+            'success');
             }
+            
+
     </script>
 </body>
 
