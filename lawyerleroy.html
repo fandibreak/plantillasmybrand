@@ -10,7 +10,7 @@
     <!-- Favicon -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -86,6 +86,7 @@
 
         <div class="flex flex-col flex-1 w-full overflow-y-auto">
 
+
             <main class="">
                 <div class="grid mb-4 pb-10 px-8 mx-4 rounded-3xl bg-Sky-50 border-4 border-blue-400">
                     <div class="col-span-12 mt-5">
@@ -114,8 +115,32 @@
                                                 </div>
                                                 <div class="text-center">
                                                     <p class="text-xl text-white font-bold mb-2">Juanjo Casco</p>
-                                                    <a class="text-white" >&#9733 &#9733 &#9733 </a>
+                                                    <p  class="text-white mb-3" &#9733 &#9733 &#9733 &#9733 </a>
+                                                    <a ></a>
                                                     <p class="text-base text-gray-400 font-normal mb-4">Especialista : Dominios</p>
+                                                    <p class="text-base text-gray-200 font-normal mb-4">Casos de Éxito</p>
+                                                <div class="flex mb-3 ml-3">
+
+                                                    <img class="h-10 w-10 mr-1 rounded-full object-cover "
+                                                    src="data:image/png;base64,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"
+                                                    alt="leroy" />
+
+
+                                                    <img class="h-10 w-10 rounded-full object-cover "
+                                                    src="https://img1.freepng.es/20180329/bye/kisspng-leroy-merlin-retail-praktiker-logo-home-improvemen-i-5abcec6adad654.1783792315223307308964.jpg"
+                                                    alt="leroy" />
+
+                                                    <img class="h-10 w-10 ml-1 rounded-full object-cover "
+                                                    src="https://w7.pngwing.com/pngs/224/696/png-transparent-nike-logo-movement-brands-black.png"
+                                                    alt="leroy" />
+                                          
+                                                    <img class="h-10 w-10 ml-1 rounded-full object-cover "
+                                                    src="data:image/png;base64,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"
+                                                    alt="leroy" />
+
+                                                </div>
+
+
                                                         <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-10 border border-blue-500 hover:border-transparent rounded" onClick="myFunction()">
                                                             Contactar
                                                           </button>  
@@ -130,8 +155,28 @@
                                                 </div>
                                                 <div class="text-center">
                                                     <p class="text-xl text-white font-bold mb-2">Taniu Ojeda</p>
-                                                    <a class="text-white" >&#9733 &#9733 &#9733 &#9733 &#9733  </a>
+                                                    <p  class="text-white mb-3" &#9733 &#9733 &#9733 &#9733 &#9733  </a>
                                                     <p class="text-base text-gray-400 font-normal mb-4">Especialista : Emails</p>
+                                                    <p class="text-base text-gray-200 font-normal mb-4">Casos de Éxito</p>
+                                                    <div class="flex mb-3 ml-3">
+    
+                                                        <img class="h-10 w-10 rounded-full object-cover "
+                                                        src="https://w7.pngwing.com/pngs/695/105/png-transparent-apple-logo-business-apple-logo-outline-heart-logo-computer-wallpaper.png"
+                                                        alt="leroy" />
+    
+                                                        <img class="h-10 w-10 ml-1 rounded-full object-cover "
+                                                        src="data:image/jpeg;base64,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"
+                                                        alt="leroy" />
+                                              
+                                                        <img class="h-10 w-10 ml-1 rounded-full object-cover "
+                                                        src="data:image/png;base64,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"
+                                                        alt="leroy" />
+
+                                                        <img class="h-10 w-10 ml-1 rounded-full object-cover "
+                                                        src="  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHlky9_LfRybD_UpangTj0aThGnlslEdtayXrjgMejz41aocriUNFURtZ6nwAcpyMNb_Q&usqp=CAU"
+                                                        alt="leroy" />
+                                                      
+                                                    </div>
                                                         <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-10 border border-blue-500 hover:border-transparent rounded" onClick="myFunction()">
                                                             Contactar
                                                           </button>  
@@ -146,8 +191,29 @@
                                                 </div>
                                                 <div class="text-center">
                                                     <p class="text-xl text-white font-bold mb-2">Isabela Guapo
-                                                    </p>                <a class="text-white" >&#9733 &#9733 &#9733 &#9733  </a>
-                                                    <p class="text-base text-gray-400 font-normal  mb-4">Especialista : Derecho de imagenes</p>
+                                                    </p>                <p  class="text-white mb-3" &#9733 &#9733 &#9733 &#9733  </a>
+                                                    <p class="text-base text-gray-400 font-normal  mb-4">Especialista : Derecho de imágenes</p>
+                                                    <p class="text-base text-gray-200 font-normal mb-4">Casos de Éxito</p>
+                                                    <div class="flex mb-3 ml-9">
+    
+                                                        <img class="h-10 w-10 rounded-full object-cover "
+                                                        src="https://www2.hm.com/hm-logo.png"
+                                                        alt="leroy" />
+    
+                                                        <img class="h-10 w-10 ml-1 rounded-full object-cover "
+                                                        src="https://www.revistadeck.com/sitio/wp-content/uploads/Jure-TovrljanPortada2-3.jpg"
+                                                        alt="leroy" />
+                                              
+                                                        <img class="h-10 w-10 ml-1 rounded-full object-cover "
+                                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYwcDhOceftEYyMN8e17Cc1gBIoMZlrcZjOlhjjFhbLgaM4bxsmuU-nay0mljEt6j_e0U&usqp=CAU"
+                                                        alt="leroy" />
+
+                                               
+                                                      
+                                                        <img class="h-10 w-10 ml-1 rounded-full object-cover "
+                                                        src="https://misedades.files.wordpress.com/2013/05/chupachups.jpg"
+                                                        alt="leroy" />
+                                                    </div>
                                      
                                                         <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-10 border border-blue-500 hover:border-transparent rounded" onClick="myFunction()">
                                                             Contactar
@@ -167,9 +233,25 @@
                                             </div>
                                             <div class="text-center">
                                                 <p class="text-xl text-white font-bold mb-2">Alicia Carrinton</p>
-                                                <a class="text-white" >&#9733 &#9733 &#9733 </a>
+                                                <p  class="text-white mb-3" &#9733 &#9733 &#9733 </a>
                                                 <p class="text-base text-gray-400 font-normal mb-4">Especialista : Dominios</p>
-                                                    <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-10 border border-blue-500 hover:border-transparent rounded" onClick="myFunction()">
+                                                <p class="text-base text-gray-200 font-normal mb-4">Casos de Éxito</p>
+                                                <div class="flex mb-3 ml-3">
+                                                    
+                                                    <img class="h-10 w-10 rounded-full object-cover "
+                                                    src="https://cdn.designcrowd.com/blog/2015/December/top-25-car-brands-2015/Volkswagen_628.png"
+                                                    alt="leroy" />
+
+                                                    <img class="h-10 w-10 ml-1 rounded-full object-cover "
+                                                    src="https://s3-eu-west-1.amazonaws.com/rankia/images/valoraciones/0023/3304/bmw_foro.jpg?1461153314"
+                                                    alt="leroy" />
+                                          
+                                                    <img class="h-10 w-10 ml-1 rounded-full object-cover "
+                                                    src="https://blog.grupoapok.com/wp-content/uploads/2019/01/nissan.png"
+                                                    alt="leroy" />
+                                                
+                                                </div>
+                                                <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-10 border border-blue-500 hover:border-transparent rounded" onClick="myFunction()">
                                                         Contactar
                                                       </button>  
                                             </div>
@@ -183,8 +265,24 @@
                                             </div>
                                             <div class="text-center">
                                                 <p class="text-xl text-white font-bold mb-2">Ruben Lage</p>
-                                                <a class="text-white" >&#9733 &#9733 &#9733 &#9733 &#9733  </a>
+                                                <p  class="text-white mb-3" &#9733 &#9733 &#9733 &#9733 &#9733  </a>
                                                 <p class="text-base text-gray-400 font-normal mb-4">Especialista : Emails</p>
+                                                <p class="text-base text-gray-200 font-normal mb-4">Casos de Éxito</p>
+                                                <div class="flex mb-3 ml-3">
+                                                    
+                                                    <img class="h-10 w-10 rounded-full object-cover "
+                                                    src="https://i.pinimg.com/236x/cf/d1/85/cfd185bbc074042283d7a9f952c8971f.jpg"
+                                                    alt="leroy" />
+
+                                                    <img class="h-10 w-10 ml-1 rounded-full object-cover "
+                                                    src="https://omniaestudio.es/wp-content/uploads/2020/10/coca-cola-logo-260x260-01.png"
+                                                    alt="leroy" />
+                                          
+                                                    <img class="h-10 w-10 ml-1 rounded-full object-cover "
+                                                    src="http://reportajes.lavanguardia.com/wp-content/uploads/sites/1/2018/03/2000px-Amazon_logo_plain.svg_.png"
+                                                    alt="leroy" />
+                                                
+                                                </div>
                                                     <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-10 border border-blue-500 hover:border-transparent rounded" onClick="myFunction()">
                                                         Contactar
                                                       </button>  
@@ -198,13 +296,33 @@
                                                     alt="photo">
                                             </div>
                                             <div class="text-center">
-                                                <p class="text-xl text-white font-bold mb-2">Michaela
-                                                </p>                <a class="text-white" >&#9733 &#9733 &#9733 &#9733  </a>
-                                                <p class="text-base text-gray-400 font-normal  mb-4">Especialista : Derecho de imagenes</p>
+                                                <p class="text-xl text-white font-bold mb-2">Michelle Wallis
+                                                    
+                                                </p>                <p  class="text-white mb-3" &#9733 &#9733 &#9733 &#9733  </a>
+                                                <p class="text-base text-gray-400 font-normal  mb-4">Especialista : Derecho de imágenes</p>
+                                                <p class="text-base text-gray-200 font-normal mb-4">Casos de Éxito</p>
+                                                <div class="flex mb-3 ml-9">
+                                                    <img class="h-10 w-10 rounded-full object-cover "
+                                                    src="https://img.vixdata.io/pd/jpg-large/es/sites/default/files/g/google-logo-1998.jpg"
+                                                    alt="leroy" />
+
+                                                    <img class="h-10 w-10 ml-1 rounded-full object-cover "
+                                                    src="https://www.gamelegends.it/wp-content/uploads/2017/08/zfHNFDb5.jpg"
+                                                    alt="leroy" />
+                                          
+                                                    <img class="h-10 w-10 ml-1 rounded-full object-cover "
+                                                    src="https://thumbs.dreamstime.com/b/icono-del-logo-de-facebook-con-bordes-redondos-cuadrados-redondeados-logotipo-para-web-print-prop%C3%B3sito-176486534.jpg"
+                                                    alt="leroy" />
+
+                                                    <img class="h-10 w-10 ml-1 rounded-full object-cover "
+                                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnl_sB7rvmpfymrdtvmyc0bGK9N0Kztdk_CHKbCu58SGRxFiwSK-88_PIvAKslvuCx0NI&usqp=CAU"
+                                                    alt="leroy" />
+                                                  
+                                                </div>
                                  
-                                                    <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-10 border border-blue-500 hover:border-transparent rounded" onClick="myFunction()">
-                                                        Contactar
-                                                      </button>  
+                                                <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-10 border border-blue-500 hover:border-transparent rounded" onClick="myFunction()">
+                                                    Contactar
+                                                  </button>  
                                             </div>
                                         </div>
                 
@@ -355,7 +473,9 @@
 
 
         function myFunction() {
-        alert('Enseguida te llamaremos');
+            swal('Tu solicitud ha sido enviada',
+            'Nuestro Abogado contactará contigo lo antes posible',
+            'success');
             }
     </script>
 </body>
